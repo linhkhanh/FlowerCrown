@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @crown.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @crown.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @crown.price %>
+</p>
+
+<%= link_to 'Edit', edit_crown_path(@crown) %> |
+<%= link_to 'Back', crowns_path %>
