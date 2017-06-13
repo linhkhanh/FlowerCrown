@@ -3,6 +3,11 @@ require 'test_helper'
 class CrownsControllerTest < ActionController::TestCase
   setup do
     @crown = crowns(:one)
+    @update = {
+      name: 'Linh Crown',
+      description: 'Linh Crown is ...'
+      price: 97.01
+    }
   end
 
   test "should get index" do
@@ -18,32 +23,16 @@ class CrownsControllerTest < ActionController::TestCase
 
   test "should create crown" do
     assert_difference('Crown.count') do
-      post :create, crown: { description: @crown.description, name: @crown.name, price: @crown.price }
+      post :create, crown: @update
     end
 
     assert_redirected_to crown_path(assigns(:crown))
   end
 
-  test "should show crown" do
-    get :show, id: @crown
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @crown
-    assert_response :success
-  end
 
   test "should update crown" do
-    patch :update, id: @crown, crown: { description: @crown.description, name: @crown.name, price: @crown.price }
+    patch :update, id: @crown, crown: @update
     assert_redirected_to crown_path(assigns(:crown))
   end
 
-  test "should destroy crown" do
-    assert_difference('Crown.count', -1) do
-      delete :destroy, id: @crown
-    end
-
-    assert_redirected_to crowns_path
-  end
 end

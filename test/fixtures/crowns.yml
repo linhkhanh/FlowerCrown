@@ -9,3 +9,10 @@ two:
   name: MyString
   description: MyText
   price: 9.99
+
+pink:
+  name: Rose Crown
+  description: 
+   It is so beautiful
+  price: 89.07
+  

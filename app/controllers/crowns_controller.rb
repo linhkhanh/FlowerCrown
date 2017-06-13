@@ -43,10 +43,8 @@ class CrownsController < ApplicationController
     respond_to do |format|
       if @crown.update(crown_params)
         format.html { redirect_to @crown, notice: 'Crown was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @crown.errors, status: :unprocessable_entity }
       end
     end
   end
